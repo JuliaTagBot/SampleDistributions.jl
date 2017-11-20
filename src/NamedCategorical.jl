@@ -1,5 +1,6 @@
 module NamedCategorical
 
-# package code goes here
+using Distributions
+using NamedTuples
 
 end # module
