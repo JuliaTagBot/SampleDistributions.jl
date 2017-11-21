@@ -1,4 +1,4 @@
-The NamedCategorical.jl package is licensed under the MIT "Expat" License:
+The SampleDistributions.jl package is licensed under the MIT "Expat" License:
 
 > Copyright (c) 2017: ExpandingMan.
 >
