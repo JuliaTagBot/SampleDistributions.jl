@@ -32,3 +32,18 @@ supportkeys(d::SampleDistribution) = keys(d.map)
 support(d::SampleDistribution) = collect(supportkeys(d))
 
 getsample(d::SampleDistribution, i::Integer) = d.inverse_map[i]
+
+pdfbyindex(d::SampleDistribution, i::Integer) = pdf(d.dist, i)
+
+
+"""
+    expectation(d::SampleDistribution, f::Function)
+
+Compute the expectation value of `f` over distribution `d`.  `f` should take a single argument
+which is in the support of `d`.  Also supports `do` syntax.
+"""
+function expectation(d::SampleDistribution, f::Function)
+    sum(pdfbyindex(d, i)*f(getsample(d, i)) for i ∈ 1:ncategories(d))
+end
+expectation(f::Function, d::SampleDistribution) = expectation(d, f)
+export expectation
