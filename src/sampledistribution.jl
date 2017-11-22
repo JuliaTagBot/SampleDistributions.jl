@@ -27,7 +27,6 @@ export SampleDistribution
 # this will do counts for you
 SampleDistribution(v::AbstractVector) = SampleDistribution(proportionmap(v))
 
-
 supportkeys(d::SampleDistribution) = keys(d.map)
 support(d::SampleDistribution) = collect(supportkeys(d))
 

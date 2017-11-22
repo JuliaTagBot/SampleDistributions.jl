@@ -9,5 +9,6 @@ using NamedTuples
 include("utils.jl")
 include("sampledistribution.jl")
 include("distributionsapi.jl")
+include("informationtheory.jl")
 
 end # module
